@@ -14,9 +14,15 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 'https://al-jannat-marrige-hall-hzx5.vercel.app/';
+const port = process.env.PORT || 5000;
 
-app.use(cors());
+// Configure CORS with environment variable
+app.use(cors({
+  origin: [process.env.CORS_ORIGIN, 'http://localhost:3000'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
@@ -34,7 +40,6 @@ app.use('/api/categories', categoryRoutes); // Handles /api/categories, /api/cat
 app.use('/api/posters', posterRoutes); // Mount posters route
 app.use('/api/images', imageRoutes);
 connectDB();
-// Health check route
 app.get('/health', (req, res) => {
   res.status(200).json({ message: 'Server is running' });
 });
