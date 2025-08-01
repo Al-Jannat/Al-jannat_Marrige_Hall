@@ -16,12 +16,9 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5000;
 
-// Configure CORS with environment variable
 app.use(cors({
-  origin: [process.env.CORS_ORIGIN, 'http://localhost:3000'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: 'https://al-jannat-marrige-hall-hzx5.vercel.app/',
+  credentials: true
 }));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
