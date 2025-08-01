@@ -1,0 +1,42 @@
+.services-container {
+  min-height: 100vh;
+  background-color: #FFF8E7;
+}
+
+.content {
+  padding: 20px;
+  padding-top: 80px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1B263B;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.services-list {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.service-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1B263B;
+  display: block;
+}
+
+.service-description {
+  font-size: 14px;
+  color: #415A77;
+  display: block;
+}

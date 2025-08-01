@@ -1,0 +1,74 @@
+.admin-signup-container {
+  min-height: 100vh;
+  background-color: #f8f0f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #4b0082;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #1A1A1A;
+  margin-bottom: 15px;
+}
+
+.error-text {
+  color: #FF4D4D;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.button {
+  background-color: #FFD700;
+  color: #1A1A1A;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #e6c200;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #FFD700;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.link-button:hover {
+  text-decoration: underline;
+}

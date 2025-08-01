@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Basic Package",
+    "price": "PKR 100,000",
+    "description": "Hall rental only."
+  },
+  {
+    "id": 2,
+    "name": "Full Service",
+    "price": "PKR 500,000",
+    "description": "Includes catering, decoration, and event planning."
+  }
+]

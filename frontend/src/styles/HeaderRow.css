@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;700&display=swap');
+
+.home-image-container {
+  min-height: 100vh;
+  background-color: #F8F1E9; /* Ivory Cream */
+  font-family: 'Open Sans', sans-serif;
+  color: #333333;
+  position: relative;
+  margin-top: 60px; /* Start below header */
+  padding: 0 10px; /* Prevent overflow on Pixel 7 */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-content {
+  display: flex;
+  height: calc(100vh - 60px); /* Adjust for header */
+  width: 100%;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  margin-left: 250px; /* Adjust based on sidebar width */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ... (rest of the CSS remains the same) ... */
+
+@media (max-width: 1080px) { /* Target Pixel 7 */
+  .home-image-container {
+    margin-top: 60px; /* Match header height */
+    padding: 0 5px; /* Reduced padding */
+  }
+
+  .main-content {
+    height: calc(100vh - 60px);
+    margin-left: 0; /* Collapse sidebar on mobile */
+    flex-direction: column;
+  }
+
+  .content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Fit Pixel 7 */
+  }
+}
+
+@media (max-width: 768px) {
+  .home-image-container {
+    margin-top: 60px;
+  }
+
+  .main-content {
+    height: calc(100vh - 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-image-container {
+    margin-top: 50px; /* Adjust for smaller screens */
+    padding: 0 5px;
+  }
+
+  .main-content {
+    height: calc(100vh - 50px);
+  }
+
+  .content {
+    padding: 5px;
+  }
+
+  .image-grid {
+    grid-template-columns: 1fr; /* Single column */
+  }
+
+  .image-thumbnail {
+    width: 100px;
+    height: 100px;
+  }
+}

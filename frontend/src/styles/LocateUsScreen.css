@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;700&display=swap');
+
+.container {
+  background: #F8F1E9; /* Ivory Cream */
+  min-height: 100vh;
+  color: #333333;
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+  position: relative;
+}
+
+.header {
+  background: linear-gradient(45deg, #E8B923, #F8C8DC); /* Soft Gold to Blush Pink */
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #E8B923; /* Soft Gold */
+  margin: 20px 0;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.map-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 30px;
+  border: 2px solid #F8C8DC; /* Blush Pink */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+}
+
+.category-section {
+  margin-bottom: 40px;
+  padding: 0 20px;
+  position: relative;
+  background: #F8F1E9; /* Ivory Cream */
+}
+
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 0 10px;
+}
+
+.category-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category-card:hover {
+  background: #98D7C2; /* Mint Green */
+  transform: translateY(-5px);
+}
+
+.category-card i {
+  font-size: 2rem;
+  color: #E8B923; /* Soft Gold */
+  margin-bottom: 10px;
+}
+
+.category-card span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333333;
+}
+
+.contact-section {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #E8B923; /* Soft Gold */
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.contact-info {
+  margin-bottom: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.contact-icon {
+  color: #E8B923; /* Soft Gold */
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.whatsapp-button {
+  background: linear-gradient(45deg, #E8B923, #F8C8DC); /* Soft Gold to Blush Pink */
+  color: #333333;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.whatsapp-button:hover {
+  background: #98D7C2; /* Mint Green */
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .map-iframe {
+    height: 250px;
+  }
+
+  .contact-title {
+    font-size: 1.6rem;
+  }
+
+  .contact-item {
+    font-size: 1rem;
+  }
+
+  .contact-icon {
+    font-size: 1.3rem;
+  }
+
+  .whatsapp-button {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .category-card {
+    padding: 15px;
+  }
+
+  .category-card i {
+    font-size: 1.8rem;
+  }
+
+  .category-card span {
+    font-size: 1rem;
+  }
+
+  .category-list {
+    grid-template-columns: repeat(2, 1fr); /* Force 2 columns on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .map-iframe {
+    height: 200px;
+  }
+
+  .contact-title {
+    font-size: 1.4rem;
+  }
+
+  .contact-item {
+    font-size: 0.9rem;
+  }
+
+  .contact-icon {
+    font-size: 1.2rem;
+  }
+
+  .whatsapp-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .category-card {
+    padding: 10px;
+  }
+
+  .category-card i {
+    font-size: 1.5rem;
+  }
+
+  .category-card span {
+    font-size: 0.9rem;
+  }
+}

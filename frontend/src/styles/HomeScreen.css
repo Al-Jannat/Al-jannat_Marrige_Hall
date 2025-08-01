@@ -1,0 +1,66 @@
+/* Ensure Google Fonts are loaded in index.html */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;700&display=swap');
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .poster-container {
+    height: 45vh;
+  }
+
+  .category-section {
+    top: 50px;
+  }
+
+  .category-list {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .book-now-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .poster-container {
+    height: 35vh;
+  }
+
+  .category-section {
+    top: 40px;
+  }
+
+  .category-card {
+    padding: 15px;
+  }
+
+  .category-text {
+    font-size: 1rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+
+  .social-icon {
+    font-size: 1.2rem;
+    margin: 0 8px;
+  }
+
+  .book-now-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,54 @@
+.admin-navigator {
+  min-height: 100vh;
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.admin-navigator h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #f0f0f0;
+}
+
+.admin-navigator .form-group {
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.admin-navigator .form-group label {
+  display: block;
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 5px;
+}
+
+.admin-navigator .form-group input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #444;
+  border-radius: 5px;
+  background-color: #222;
+  color: #fff;
+}
+
+.admin-navigator .form-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #6200ea;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.admin-navigator .form-button:hover {
+  background-color: #7b21f0;
+}

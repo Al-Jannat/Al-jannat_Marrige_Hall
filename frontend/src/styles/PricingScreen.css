@@ -1,0 +1,43 @@
+.pricing-container {
+  min-height: 100vh;
+  background-color: #f8f1f1;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #4b0082;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.pricing-list {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.item-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1B263B;
+}
+
+.item-price {
+  font-size: 16px;
+  color: #1B263B;
+  display: block;
+}
+
+.item-description {
+  font-size: 14px;
+  color: #555;
+  display: block;
+}
