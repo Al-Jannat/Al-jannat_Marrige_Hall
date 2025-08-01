@@ -10,7 +10,6 @@ const categoryRoutes = require('./routes/category');
 const imageRoutes = require('./routes/images');
 const cloudinary = require('cloudinary').v2;
 const dotenv = require('dotenv');
-const { get } = require('mongoose');
 
 dotenv.config();
 
@@ -35,9 +34,7 @@ app.use('/api/categories', categoryRoutes); // Handles /api/categories, /api/cat
 app.use('/api/posters', posterRoutes); // Mount posters route
 app.use('/api/images', imageRoutes);
 connectDB();
-get('/', (req, res) => {
-  res.send('Welcome to Al Jannat Marriage Hall API');
-});
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
