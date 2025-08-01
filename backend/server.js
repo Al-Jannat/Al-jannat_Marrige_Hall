@@ -34,7 +34,13 @@ app.use('/api/categories', categoryRoutes); // Handles /api/categories, /api/cat
 app.use('/api/posters', posterRoutes); // Mount posters route
 app.use('/api/images', imageRoutes);
 connectDB();
-
+// Health check route
+app.get('/health', (req, res) => {
+  res.status(200).json({ message: 'Server is running' });
+});
+app.get('/', (req, res) => {
+  res.send('Welcome to Al-Jannat Marriage Hall API');
+});
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
