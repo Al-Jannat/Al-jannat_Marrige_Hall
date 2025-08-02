@@ -14,7 +14,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 'https://al-jannat-marrige-hall.vercel.app/';
 
 app.use(cors({
   origin: 'https://al-jannat-marrige-hall-hzx5.vercel.app/',
