@@ -5,7 +5,7 @@ const apiRoutes = require('./routes/api');
 const authRoutes = require('./routes/auth');
 const menuRoutes = require('./routes/menu');
 const dishRoutes = require('./routes/dish');
-const posterRoutes = require('./routes/posters'); // Added posters route
+const posterRoutes = require('./routes/posters');
 const categoryRoutes = require('./routes/category');
 const imageRoutes = require('./routes/images');
 const cloudinary = require('cloudinary').v2;
@@ -14,11 +14,13 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 'https://al-jannat-marrige-hall.vercel.app/';
+const port = process.env.PORT || 5000; // Fixed port configuration
 
 app.use(cors({
-  origin: 'https://al-jannat-marrige-hall-hzx5.vercel.app/',
-  credentials: true
+  origin: 'https://al-jannat-marrige-hall-czgy.vercel.app', // Removed trailing slash
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
@@ -29,20 +31,24 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
-app.use('/api', apiRoutes); // Handles /api/services, /api/gallery, /api/pricing, /api/contact
-app.use('/api/auth', authRoutes); // Handles /api/auth/register, /api/auth/verify-otp, /api/auth/login
-app.use('/api/menu', menuRoutes); // Handles /api/menu/add, /api/menu/list, /api/menu/edit/:id, /api/menu/delete/:id
-app.use('/api/dishes', dishRoutes); // Handles /api/dishes/add, /api/dishes, /api/dishes/:id
-app.use('/api/categories', categoryRoutes); // Handles /api/categories, /api/categories/add, /api/categories/:id
-app.use('/api/posters', posterRoutes); // Mount posters route
+app.use('/api', apiRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/menu', menuRoutes);
+app.use('/api/dishes', dishRoutes);
+app.use('/api/categories', categoryRoutes);
+app.use('/api/posters', posterRoutes);
 app.use('/api/images', imageRoutes);
+
 connectDB();
+
 app.get('/health', (req, res) => {
   res.status(200).json({ message: 'Server is running' });
 });
+
 app.get('/', (req, res) => {
   res.send('Welcome to Al-Jannat Marriage Hall API');
 });
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
