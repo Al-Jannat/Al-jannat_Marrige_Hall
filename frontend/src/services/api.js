@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL = (process.env.REACT_APP_API_BASE_URL ||'https://al-jannat-marrige-hall-czgy.vercel.app');
+const API_URL = (process.env.REACT_APP_API_BASE_URL || 'http://localhost:3000').replace(/\/+$/, '');
 
 export const getServices = async () => {
   try {
@@ -346,18 +346,14 @@ export const addPoster = async (data) => {
 };
 
 export const getPosters = async () => {
+  console.log('Sending getPosters request');
   try {
-    console.log('Sending getPosters request');
-    const response = await axios.get(`${API_URL}/api/posters`);
+    const response = await axios.get(`${API_URL}/posters`);
     console.log('getPosters response:', response.data);
-    return { success: true, data: response.data };
+    return response.data;
   } catch (error) {
-    console.error('getPosters error:', {
-      message: error.message,
-      response: error.response?.data,
-      status: error.response?.status,
-    });
-    return { success: false, message: error.response?.data?.message || 'Failed to fetch posters' };
+    console.error('getPosters error:', error);
+    return { success: false, message: error.message };
   }
 };
 
