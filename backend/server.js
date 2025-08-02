@@ -46,18 +46,16 @@ cloudinary.config({
 });
 
 app.use('/api', apiRoutes);
-app.use('/api/auth', authRoutes);
-app.use('/api/menu', menuRoutes);
-app.use('/api/dishes', dishRoutes);
-app.use('/api/categories', categoryRoutes);
-app.use('/api/posters', posterRoutes);
-app.use('/api/images', imageRoutes);
+app.use('/auth', authRoutes);
+app.use('/menu', menuRoutes);
+app.use('/dishes', dishRoutes);
+app.use('/categories', categoryRoutes);
+app.use('/posters', posterRoutes);
+app.use('/images', imageRoutes);
 
 connectDB();
 
-app.get('/health', (req, res) => {
-  res.status(200).json({ message: 'Server is running' });
-});
+
 
 app.get('/', (req, res) => {
   res.send('Welcome to Al-Jannat Marriage Hall API');
