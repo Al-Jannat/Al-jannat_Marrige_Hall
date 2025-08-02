@@ -346,14 +346,18 @@ export const addPoster = async (data) => {
 };
 
 export const getPosters = async () => {
-  console.log('Sending getPosters request');
   try {
-    const response = await axios.get(`${API_URL}/posters`);
+    console.log('Sending getPosters request');
+    const response = await axios.get(`${API_URL}/api/posters`);
     console.log('getPosters response:', response.data);
-    return response.data;
+    return { success: true, data: response.data };
   } catch (error) {
-    console.error('getPosters error:', error);
-    return { success: false, message: error.message };
+    console.error('getPosters error:', {
+      message: error.message,
+      response: error.response?.data,
+      status: error.response?.status,
+    });
+    return { success: false, message: error.response?.data?.message || 'Failed to fetch posters' };
   }
 };
 

@@ -62,10 +62,7 @@ app.get('/', (req, res) => {
   res.send('Welcome to Al-Jannat Marriage Hall API');
 });
 
-// Redirect incorrect /images/random to /api/images/random
-app.get('/images/random', (req, res) => {
-  res.redirect('/api/images/random');
-});
+
 
 // Global error handler to prevent crashes
 app.use((err, req, res, next) => {
