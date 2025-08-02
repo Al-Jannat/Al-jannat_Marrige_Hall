@@ -11,7 +11,7 @@ export default function LocateUsScreen() {
     { name: 'Events', icon: 'fas fa-calendar-alt', path: '/category-images/Events' },
     { name: 'Catering', icon: 'fas fa-utensils', path: '/category-images/Catering' },
     { name: 'Ceremonies', icon: 'fas fa-ring', path: '/category-images/Ceremonies' },
-    { name: 'Locate Us', icon: 'fas fa-map-marker-alt', path: '/locate' },
+        { name: 'Locate Us', icon: 'fas fa-map-marker-alt', path: '/contact' },
     { name: 'Menu', icon: 'fas fa-book', path: '/menu' },
   ];
 

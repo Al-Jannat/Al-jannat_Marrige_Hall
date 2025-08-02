@@ -95,12 +95,12 @@ const CategorySection = styled(motion.div)`
   position: sticky;
   top: 60px;
   z-index: 10;
-  background:#F8F1E9; /* Ivory Cream */
+  background: #F8F1E9; /* Ivory Cream */
 `;
 
 const CategoryList = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   padding: 0 10px;
 `;
@@ -232,15 +232,14 @@ export default function HomeScreen() {
   const [posters, setPosters] = useState([]);
   const [randomImages, setRandomImages] = useState([]);
   const [currentPosterIndex, setCurrentPosterIndex] = useState(0);
-const categories = [
-  { name: 'Venue', icon: 'fas fa-church', path: '/category-images/Venue' },
-  
-  { name: 'Events', icon: 'fas fa-calendar-alt', path: '/category-images/Events' },
-  { name: 'Catering', icon: 'fas fa-utensils', path: '/category-images/Catering' },
-  { name: 'Ceremonies', icon: 'fas fa-ring', path: '/category-images/Ceremonies' },
-  { name: 'Locate Us', icon: 'fas fa-map-marker-alt', path: '/contact' },
-  { name: 'Menu', icon: 'fas fa-book', path: '/menu' },
-];
+  const categories = [
+    { name: 'Venue', icon: 'fas fa-church', path: '/category-images/Venue' },
+    { name: 'Events', icon: 'fas fa-calendar-alt', path: '/category-images/Events' },
+    { name: 'Catering', icon: 'fas fa-utensils', path: '/category-images/Catering' },
+    { name: 'Ceremonies', icon: 'fas fa-ring', path: '/category-images/Ceremonies' },
+    { name: 'Locate Us', icon: 'fas fa-map-marker-alt', path: '/contact' },
+    { name: 'Menu', icon: 'fas fa-book', path: '/menu' },
+  ];
 
   const particlesInit = async (engine) => {
     await loadFull(engine);
