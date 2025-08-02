@@ -14,14 +14,27 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const port = process.env.PORT || 5000; // Fixed port configuration
+
+// Use CORS_ORIGIN from .env, with fallback for local development
+const allowedOrigins = [
+  process.env.CORS_ORIGIN,
+  'https://al-jannat-marrige-hall-czgy-4niwvuy8e-al-jannats-projects.vercel.app', // Add frontend origin
+  'http://localhost:3000' // For local development
+];
 
 app.use(cors({
-  origin: 'https://al-jannat-marrige-hall-czgy.vercel.app', // Removed trailing slash
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, origin);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
+
 app.use(express.json({ limit: '50mb' }));
 app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
@@ -49,6 +62,15 @@ app.get('/', (req, res) => {
   res.send('Welcome to Al-Jannat Marriage Hall API');
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
+// Redirect incorrect /images/random to /api/images/random
+app.get('/images/random', (req, res) => {
+  res.redirect('/api/images/random');
 });
+
+// Global error handler to prevent crashes
+app.use((err, req, res, next) => {
+  console.error('Server error:', err);
+  res.status(500).json({ error: 'Internal server error' });
+});
+
+module.exports = app;
