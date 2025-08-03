@@ -19,7 +19,7 @@ const app = express();
 const allowedOrigins = [
   process.env.CORS_ORIGIN,
   'https://aljannatmarriagehall.com',
-  'https://www.aljannatmarriagehall.com/',
+  'https://www.aljannatmarriagehall.com',
   'https://al-jannat-marrige-hall-czgy-4niwvuy8e-al-jannats-projects.vercel.app',
   'https://al-jannat-marrige-hall-czgy.vercel.app', // Add frontend origin
   'http://localhost:3000' // For local development
